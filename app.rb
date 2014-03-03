@@ -2,7 +2,7 @@ require 'csv'
 require 'pry'
 
 class Pyrus
-  LAUNCHERS = %w(eve nick dan jake michael bjorn hannah chris eric robel)
+  PEOPLE = %w()
   FILE_PATH = 'past_pairs.csv'
 
   def initialize
@@ -14,7 +14,7 @@ class Pyrus
 
     loop do
       attempted_pairs = []
-      LAUNCHERS.shuffle.each_slice(2) do |pair|
+      PEOPLE.shuffle.each_slice(2) do |pair|
         attempted_pairs << pair
       end
 
