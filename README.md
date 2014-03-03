@@ -1,6 +1,6 @@
 # Pryus
 
-Fork this for each group and change the constant `PEOPLE` to include the
+Create a new branch each group for each cohort and change the constant `PEOPLE` to include the
 names of your group.
 
 You can then generate a unique pair by running `ruby app.rb`.

@@ -1,11 +1,23 @@
+require 'dotenv'
+Dotenv.load
+
+require 'fileutils'
 require 'csv'
-require 'pry'
 
 class Pyrus
-  PEOPLE = %w()
-  FILE_PATH = 'past_pairs.csv'
+  MENTOR = ENV['MENTOR']
+  COHORT = ENV['COHORT']
+  PEOPLE = ENV['PEOPLE'].split(', ')
+
+  DIRECTORY = "pairs/#{COHORT}"
+  FILE_PATH = "#{DIRECTORY}/#{MENTOR}.csv"
 
   def initialize
+    unless File.directory?(DIRECTORY)
+      Dir.mkdir DIRECTORY
+      FileUtils.touch(FILE_PATH)
+    end
+
     @previous_pairs = load_previous_pairs
   end
 
@@ -34,7 +46,7 @@ class Pyrus
   end
 
   def save_pairs(pairs)
-    CSV.open(FILE_PATH, "a") do |csv|
+    CSV.open(FILE_PATH, "a+") do |csv|
       pairs.each do |pair|
         csv << pair
       end
