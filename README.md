@@ -1,7 +1,6 @@
 # Pryus
 
-Create a new branch each group for each cohort and change the constant `PEOPLE` to include the
-names of your group.
+Set up your `.env` file based on the `.env.sample`.
 
 You can then generate a unique pair by running `ruby app.rb`.
 
