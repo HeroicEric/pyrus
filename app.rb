@@ -9,7 +9,7 @@ class Pyrus
     @previous_pairs = load_previous_pairs
   end
 
-  def make_pairs(stack_level=1)
+  def make_pairs
     pairs = []
 
     loop do
